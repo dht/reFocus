@@ -53,6 +53,6 @@ export const sentence = (channel) => {
         case channels.google:
             return 'where is mars?';
         case channels.browsing:
-            return 'a Nasa article';
+            return 'a NASA article';
     }
 };
