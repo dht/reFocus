@@ -1,0 +1,12 @@
+@import './Colors';
+
+.App {
+  text-align: center;
+  background-color:$bkColor;
+  color:$color;
+  padding:30px;
+  width:360px;
+  float:left;
+  margin-right:30px;
+  min-height: 360px;
+}

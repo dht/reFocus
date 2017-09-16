@@ -1,0 +1,9 @@
+.Title-container {
+  font-size: 0.7em;
+  transition: all 0.3s linear; }
+  .Title-container.big {
+    position: relative;
+    top: 30px;
+    font-size: 1.1em; }
+
+/*# sourceMappingURL=Title.css.map */
