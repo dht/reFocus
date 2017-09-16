@@ -1,0 +1,40 @@
+.Tool-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top:30px;
+  padding-bottom:10px;
+
+  .project {
+    text-align: center;
+
+    h3 {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 18px;
+      padding:0 10px;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: underline;
+      cursor:pointer;
+      font-size: 18px;
+      color:white;
+    }
+
+    .image {
+      background-image:url(/images/rick.png);
+      background-size:contain;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-color:white;
+      height:180px;
+      margin-bottom:5px;
+    }
+  }
+}

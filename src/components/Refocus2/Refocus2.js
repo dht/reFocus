@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Refocus2.css';
-import sentences from '../../constants/sentences';
 
 class Refocus2 extends Component {
 
@@ -13,11 +12,13 @@ class Refocus2 extends Component {
         };
 
         this.style = this.style.bind(this);
+        this.loadNextSentence = this.loadNextSentence.bind(this);
     }
 
     loadNextSentence() {
+        const {story = []} = this.state;
         const {index} = this.state,
-            sentence = sentences[index];
+            sentence = story[index];
 
         if (sentence) {
             this.setState({text: ''});
@@ -26,14 +27,21 @@ class Refocus2 extends Component {
             setTimeout(() => {
                 this.loadNextSentence();
             }, sentence.length * 60 + 1000);
+        } else if (this.props.onFinish) {
+            this.props.onFinish();
         }
 
         this.setState({index: index + 1});
     }
 
+    componentWillReceiveProps(props) {
+        const {story} = props;
 
-    componentDidMount() {
-        this.loadNextSentence();
+        if (story) {
+            this.setState({story}, () => {
+                this.loadNextSentence();
+            });
+        }
     }
 
     style(word) {
@@ -56,9 +64,10 @@ class Refocus2 extends Component {
         this.lastLength = 0;
 
         return (
-            <div className="App canvas">
+            <div className="Box canvas">
                 <div>
-                {words.map((word, index) => <span key={index} style={this.style(word, index)} className="word">{word} </span>)}
+                    {words.map((word, index) => <span key={index} style={this.style(word, index)}
+                                                      className="word">{word} </span>)}
                 </div>
             </div>
         );

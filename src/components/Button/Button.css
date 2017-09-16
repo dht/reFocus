@@ -1,0 +1,52 @@
+.Button-container {
+  margin: 0;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  height: 44px; }
+  .Button-container:hover {
+    background-color: #0077ea; }
+  .Button-container:active {
+    background-color: #006ad1; }
+  .Button-container.secondary {
+    background-color: green; }
+    .Button-container.secondary:hover {
+      background-color: #004d00; }
+    .Button-container.secondary:active {
+      background-color: #003400; }
+  .Button-container.danger {
+    background-color: darkred; }
+    .Button-container.danger:hover {
+      background-color: #580000; }
+    .Button-container.danger:active {
+      background-color: #3f0000; }
+  .Button-container.gray {
+    background-color: #666; }
+    .Button-container.gray:hover {
+      background-color: #4d4d4d; }
+    .Button-container.gray:active {
+      background-color: #404040; }
+  .Button-container.disabled {
+    background-color: #ccc;
+    cursor: default; }
+  .Button-container .icon {
+    font-size: 20px;
+    margin-left: -3px;
+    margin-right: 5px; }
+  .Button-container.big {
+    font-size: 22px;
+    padding: 8px 20px;
+    height: 54px; }
+    .Button-container.big .icon {
+      font-size: 24px;
+      margin-left: -3px;
+      margin-right: 5px; }
+
+/*# sourceMappingURL=Button.css.map */

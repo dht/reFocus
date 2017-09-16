@@ -4,7 +4,6 @@ import CircleIcon from '../CircleIcon/CircleIcon';
 import CircleArc from '../Arc/CircleArc';
 import Title from '../Title/Title';
 
-import gameplay from '../../constants/gameplay';
 import icons from '../../constants/icons'
 import Animation from '../../utils/Animation'
 
@@ -21,7 +20,14 @@ class Refocus1 extends Component {
 
         this.step = this.step.bind(this);
         this.finish = this.finish.bind(this);
-        this.Animation = new Animation(gameplay, this.step, this.finish);
+        this.Animation = new Animation(props.gameplay, this.step, this.finish);
+    }
+
+    componentWillReceiveProps(props) {
+        if (props.gameplay) {
+            this.Animation.setGameplay(props.gameplay);
+            this.Animation.start();
+        }
     }
 
     step(instructions) {
@@ -53,10 +59,6 @@ class Refocus1 extends Component {
         }, 3800);
     }
 
-    componentDidMount() {
-        this.Animation.start();
-    }
-
     renderFinal() {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(degrees => <CircleArc
             className={`arc-${degrees} final-arc`} angle={360 / 14} degrees={degrees * (360 / 14) - 15} key={degrees}/>)
@@ -66,7 +68,7 @@ class Refocus1 extends Component {
         const {degrees, angle, currentIconIndex, text, isFinal, bigTitle} = this.state;
 
         return (
-            <div className="App">
+            <div className="Box">
                 <div className="circle">
                     <div className="dot">
                     </div>

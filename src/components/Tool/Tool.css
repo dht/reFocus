@@ -1,0 +1,31 @@
+.Tool-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px; }
+  .Tool-container .project {
+    text-align: center; }
+    .Tool-container .project h3 {
+      font-size: 26px;
+      font-weight: bold; }
+    .Tool-container .project p {
+      margin: 0 0 10px;
+      font-size: 18px;
+      padding: 0 10px;
+      text-align: center; }
+    .Tool-container .project a {
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 18px;
+      color: white; }
+    .Tool-container .project .image {
+      background-image: url(/images/rick.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: white;
+      height: 180px;
+      margin-bottom: 5px; }
+
+/*# sourceMappingURL=Tool.css.map */

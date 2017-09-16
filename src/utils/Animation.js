@@ -2,7 +2,7 @@ import {timestamp} from '../utils/utils';
 
 class Animation {
 
-    constructor(gameplay, callbackStep, callbackFinish) {
+    constructor(gameplay = [], callbackStep, callbackFinish) {
         this.gameplay = gameplay;
         this.callback = callbackStep;
         this.callbackFinish = callbackFinish;
@@ -13,6 +13,10 @@ class Animation {
         this.nextStepIndex = 0;
 
         this.step = this.step.bind(this);
+    }
+
+    setGameplay(gameplay) {
+        this.gameplay = gameplay;
     }
 
     step() {

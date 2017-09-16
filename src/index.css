@@ -1,12 +1,16 @@
 body {
-  margin: 70px 100px;
-  padding: 0;
-  font-family: sans-serif;
-  background-color:#222;
+    margin: 70px 100px;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #222;
+}
+
+body.rtl {
+    direction: rtl;
 }
 
 @media (max-width: 1000px) {
-  body {
-    margin: 15px;
-  }
+    body {
+        margin: 43px 43px;
+    }
 }

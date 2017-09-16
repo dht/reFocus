@@ -1,4 +1,4 @@
-import {channels, sentence} from '../constants/icons';
+import {channels} from './channels';
 import ease from '../utils/easing';
 
 let timestamp = 0;
@@ -22,15 +22,15 @@ const stepByIndex = (index, delay = 1000, sentence = '') => {
 };
 
 
-const stepByTitle = (channel, delay = 1000) => {
-    return stepByIndex(channel, delay, sentence(channel));
+const stepByTitle = (verbs, channel, delay = 1000) => {
+    return stepByIndex(channel, delay, verbs[channel]);
 };
 
 let totalTime = 20000,
     previousT = 0;
 
 export const time = (percent) => {
-    const t = ease.easeOutCubic(percent),
+    const t = ease.linear(percent),
         delta = (t - previousT);
 
     previousT = t;
@@ -38,13 +38,13 @@ export const time = (percent) => {
     return delta * totalTime;
 };
 
-export const makePlan = (arr) => {
+const _makePlan = (verbs, arr) => {
     const len = arr.length - 1;
 
-    return arr.map((channel, index) => stepByTitle(channel, time(index / len)));
+    return arr.map((channel, index) => stepByTitle(verbs, channel, time(index / len)));
 };
 
-let plan = makePlan([
+export const makePlan = (verbs) => _makePlan(verbs, [
     channels.phonecall,
     channels.instagram,
     channels.whatsapp,
@@ -82,4 +82,3 @@ let plan = makePlan([
     channels.facebook,
 ]);
 
-export default plan;
